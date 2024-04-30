@@ -1,0 +1,11 @@
+## Argo CD configuration
+global:
+  image:
+    tag: latest
+nameOverride: argocd
+configs:
+  secret:
+    argocdServerAdminPassword: "${argoCdInitPassword}"
+server:
+  service: 
+    type: ClusterIP

@@ -1,0 +1,8 @@
+## ALB Ingress Controller install configuration
+clusterName: "${clusterName}"
+serviceAccount:
+  create: false
+  name: "${svcAccountName}"
+region: "${region}"
+vpcId: "${vpcId}"
+hostNetwork: false

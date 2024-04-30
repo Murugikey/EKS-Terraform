@@ -1,0 +1,18 @@
+controller:
+  kind: daemonset
+  name: "${ingressName}"
+  service:
+    name: "${serviceName}"
+    type: NodePort
+    httpPort:
+      nodePort: 30080
+    httpsPort:
+      nodePort: 30433
+    annotations: {
+      service.beta.kubernetes.io/aws-load-balancer-name: "${serviceName}",
+#      service.beta.kubernetes.io/aws-load-balancer-internal: "true",
+#      service.beta.kubernetes.io/aws-load-balancer-type: "nlb",
+#      service.beta.kubernetes.io/load-balancer-source-ranges: "10.1.0.0/16",
+#      service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: "instance"
+    }
+  enableSnippets: true  

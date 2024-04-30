@@ -1,0 +1,15 @@
+## EFS Provisioner Configurations
+
+controller:
+  serviceAccount:
+    create: false
+    name: efs-provisioner
+storageClasses:
+  - name: efs-sc
+    reclaimPolicy: Retain
+    mountOptions:
+    - tls
+    parameters:
+      provisioningMode: efs-ap
+      directoryPerms: "766"
+      
